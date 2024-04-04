@@ -1,8 +1,8 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 export const InputName = styled.p`
   font-family: Verdana, Geneva, Tahoma, sans-serif;
-  color: #474544;
+  color: #fafafa;
   font-weight: 500;
   font-size: 18px;
   letter-spacing: 1px;
@@ -12,7 +12,7 @@ export const FormInput = styled.input`
   background: none;
   border: none;
   border-bottom: solid 2px #474544;
-  color: #474544;
+  color: #fafafa;
   font-size: 14px;
   font-weight: 400;
   letter-spacing: 1px;
@@ -38,27 +38,25 @@ export const FormInput = styled.input`
 `;
 
 export const NeonButton = styled.button`
+  width: 120px;
+  height: 30px;
   background: none;
-  border: solid 2px #474544;
-  color: #474544;
+  border: solid 2px #686868;
+  color: #fafafa;
   cursor: pointer;
-  display: inline-block;
-  font-family: 'Helvetica', Arial, sans-serif;
-  font-size: 0.875em;
+  font-family: "Helvetica", Arial, sans-serif;
+  font-size: 11px;
   font-weight: bold;
   outline: none;
-  padding: 10px;
+  padding: 3px 6px;
   text-transform: uppercase;
-  -webkit-transition: all 0.3s;
-  -moz-transition: all 0.3s;
-  -ms-transition: all 0.3s;
-  -o-transition: all 0.3s;
   transition: all 0.3s;
-
-  margin-bottom: 30px;
+  margin-left: 10px;
+  border-radius: 5px;
+  text-align: center;
 
   &:hover {
-    background: #474544;
-    color: #f2f3eb;
+    background: #686868;
+    color: #fafafa;
   }
 `;

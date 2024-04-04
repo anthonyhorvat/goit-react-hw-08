@@ -2,12 +2,13 @@ import { useDispatch, useSelector } from "react-redux";
 import { FormInput, InputName, NeonButton } from "./ContactForm.styled";
 import { Notify } from "notiflix";
 
-import { addContact } from "../../redux/contactsOps";
-import { getContacts } from "../../redux/selectors";
+import { addContact } from "../../redux/contacts/operations";
+import { selectContacts } from "../../redux/contacts/selectors";
+import Filter from "../Filter/Filter";
 
 const ContactForm = () => {
   const dispatch = useDispatch();
-  const contacts = useSelector(getContacts);
+  const contacts = useSelector(selectContacts);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -38,6 +39,7 @@ const ContactForm = () => {
       <InputName>Number</InputName>
       <FormInput type="tel" placeholder="Enter number" name="number" required />
       <NeonButton type="submit">Add contact</NeonButton>
+      <Filter />
     </form>
   );
 };

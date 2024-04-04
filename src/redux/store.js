@@ -1,5 +1,9 @@
 import { configureStore } from "@reduxjs/toolkit";
-import { contactsSlice } from "./contactsSlice";
+
+import authReducer from "./auth/slice";
+import contactsReducer from "./contacts/slice";
+import storage from "redux-persist/lib/storage";
+
 import {
   persistStore,
   persistReducer,
@@ -10,21 +14,19 @@ import {
   PURGE,
   REGISTER,
 } from "redux-persist";
-import storage from "redux-persist/lib/storage";
-import { filterSlice } from "./filtersSlice";
 
-const persistConfig = {
-  key: "root",
-  version: 1,
+const authPersistConfig = {
+  key: "auth",
   storage,
+  whitelist: ["token"],
 };
 
-const persistedReducer = persistReducer(persistConfig, contactsSlice.reducer);
+const persistedAuthReducer = persistReducer(authPersistConfig, authReducer);
 
 export const store = configureStore({
   reducer: {
-    contacts: persistedReducer,
-    filter: filterSlice.reducer,
+    auth: persistedAuthReducer,
+    contacts: contactsReducer,
   },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({

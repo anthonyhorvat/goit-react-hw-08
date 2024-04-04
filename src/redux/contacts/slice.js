@@ -1,28 +1,20 @@
-import { nanoid } from "nanoid";
 import { createSlice } from "@reduxjs/toolkit";
-import { fetchContacts, deleteContact, addContact } from "./contactsOps";
-import { createSelector } from "@reduxjs/toolkit";
-import { selectTextFilter } from "./filtersSlice";
-
-const oldContacts = [
-  { name: "Rosie Simpson", number: "459-12-56" },
-  { name: "Hermione Kline", number: "443-89-12" },
-  { name: "Eden Clements", number: "645-17-79" },
-  { name: "Annie Copeland", number: "227-91-26" },
-];
-
-const items = oldContacts.map((contact) => {
-  contact.id = nanoid();
-  return contact;
-});
+import { fetchContacts, deleteContact, addContact } from "./operations";
 
 export const contactsSlice = createSlice({
   name: "contacts",
   initialState: {
-    items,
+    items: [],
     loading: false,
     error: null,
+    filter: "",
   },
+  reducers: {
+    changeFilter: (state, { payload }) => {
+      return { ...state, filter: payload };
+    },
+  },
+
   extraReducers: (builder) =>
     builder
       .addCase(fetchContacts.pending, (state) => {
@@ -66,18 +58,4 @@ export const contactsSlice = createSlice({
 });
 
 export default contactsSlice.reducer;
-
-export const selectLoading = (state) => state.contacts.loading;
-
-export const selectError = (state) => state.contacts.error;
-
-export const selectContacts = (state) => state.contacts.items;
-
-export const selectFilteredContacts = createSelector(
-  [selectContacts, selectTextFilter],
-  (contacts, textFilter) => {
-    return contacts.filter((contact) =>
-      contact.name.toLowerCase().includes(textFilter.toLowerCase())
-    );
-  }
-);
+export const { changeFilter } = contactsSlice.actions;
