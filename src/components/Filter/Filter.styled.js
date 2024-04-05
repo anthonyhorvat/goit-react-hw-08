@@ -1,10 +1,14 @@
 import styled from "styled-components";
 
+export const FilterBox = styled.div`
+  margin-top: 100px;
+`;
+
 export const FilterInput = styled.input`
   background: none;
   border: none;
   border-bottom: solid 2px #474544;
-  color: #474544;
+  color: #fafafa;
   font-size: 14px;
   font-weight: 400;
   letter-spacing: 1px;
@@ -31,7 +35,7 @@ export const FilterInput = styled.input`
 
 export const FilterInputTitle = styled.p`
   font-family: Verdana, Geneva, Tahoma, sans-serif;
-  color: #474544;
+  color: #fafafa;
   font-weight: 500;
   font-size: 18px;
   letter-spacing: 1px;

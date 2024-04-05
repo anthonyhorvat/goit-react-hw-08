@@ -1,5 +1,5 @@
 import { useDispatch, useSelector } from "react-redux";
-import { FormInput, InputName, NeonButton } from "./ContactForm.styled";
+import { FormInput, InputName, NeonButton, Form } from "./ContactForm.styled";
 import { Notify } from "notiflix";
 
 import { addContact } from "../../redux/contacts/operations";
@@ -33,14 +33,14 @@ const ContactForm = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <Form onSubmit={handleSubmit}>
       <InputName>Name</InputName>
       <FormInput type="text" placeholder="Enter name" name="name" required />
       <InputName>Number</InputName>
       <FormInput type="tel" placeholder="Enter number" name="number" required />
       <NeonButton type="submit">Add contact</NeonButton>
       <Filter />
-    </form>
+    </Form>
   );
 };
 

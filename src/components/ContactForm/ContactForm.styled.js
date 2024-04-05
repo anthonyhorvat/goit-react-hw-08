@@ -1,5 +1,17 @@
 import styled from "styled-components";
 
+export const Form = styled.form`
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  border-radius: 10px;
+
+  @media (max-width: 768px) {
+    max-width: 90%;
+  }
+`;
+
 export const InputName = styled.p`
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   color: #fafafa;
@@ -34,6 +46,7 @@ export const FormInput = styled.input`
     outline: none;
     padding: 0 0 0.875em 0;
     background-color: transparent;
+    color: #fafafa;
   }
 `;
 

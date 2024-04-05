@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { LoaderText } from "./Loader.styled";
 
 export default function Loader({ children }) {
   const [dots, setDots] = useState("");
@@ -12,11 +13,11 @@ export default function Loader({ children }) {
   }, []);
 
   return (
-    <p>
+    <LoaderText>
       <b>
         {children}
         {dots}
       </b>
-    </p>
+    </LoaderText>
   );
 }

@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 export const AppInfo = styled.div`
-  background-color: #292929;
+  background-color: #131313;
   color: #fafafa;
   padding: 20px;
   height: 100vh;

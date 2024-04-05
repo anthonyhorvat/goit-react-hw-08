@@ -2,35 +2,34 @@ import styled from "styled-components";
 
 export const ContactElement = styled.li`
   font-family: "Helvetica", Arial, sans-serif;
-  color: #474544;
+  color: #fafafa;
   font-size: 14px;
   font-weight: 400;
   letter-spacing: 1px;
   margin-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
 `;
 
 export const DeleteButton = styled.button`
   background: none;
-  border: solid 2px #474544;
-
-  color: #474544;
-  cursor: pointer;
-  display: inline-block;
+  border: solid 2px #686868;
+  color: #fafafa;
   font-family: "Helvetica", Arial, sans-serif;
-  font-size: 10px;
+  font-size: 11px;
   font-weight: bold;
-  outline: none;
-  padding: 5px;
+  text-decoration: none;
+  padding: 4px 4px;
   text-transform: uppercase;
-  -webkit-transition: all 0.3s;
-  -moz-transition: all 0.3s;
-  -ms-transition: all 0.3s;
-  -o-transition: all 0.3s;
   transition: all 0.3s;
+  border-radius: 5px;
+  cursor: pointer;
+
   margin-left: 10px;
+  display: inline-block;
 
   &:hover {
-    background: #474544;
-    color: #f2f3eb;
+    background: #686868;
+    color: #fafafa;
   }
 `;
