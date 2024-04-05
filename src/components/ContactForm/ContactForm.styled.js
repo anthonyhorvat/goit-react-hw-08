@@ -63,10 +63,34 @@ export const NeonButton = styled.button`
   outline: none;
   padding: 3px 6px;
   text-transform: uppercase;
-  transition: all 0.3s;
-  margin-left: 10px;
+
   border-radius: 5px;
   text-align: center;
+  position: relative;
+  overflow: hidden;
+
+  &:before {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(
+      to right,
+      rgba(255, 255, 255, 0.05),
+      rgba(255, 255, 255, 0.2),
+      rgba(255, 255, 255, 0.05)
+    );
+    border-radius: 50%;
+    transition: all 0.5s;
+    z-index: 1;
+    pointer-events: none;
+  }
+
+  &:hover:before {
+    transform: scale(3);
+  }
 
   &:hover {
     background: #686868;

@@ -4,7 +4,7 @@ import PageTitle from "../components/PageTitle/PageTitle";
 export default function Login() {
   return (
     <div>
-      <PageTitle>Please log in</PageTitle>
+      <PageTitle>Welcome back! </PageTitle>
       <LoginForm />
     </div>
   );

@@ -9,9 +9,10 @@ export const MenuContainer = styled.div`
 `;
 
 export const WelcomeMessage = styled.p`
-  font-weight: bold;
   color: #fafafa;
   margin: 0 10px;
+  font-weight: 300;
+  letter-spacing: 2px;
 `;
 
 export const LogoutButton = styled.button`

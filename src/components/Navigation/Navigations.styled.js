@@ -4,8 +4,8 @@ import { NavLink } from "react-router-dom";
 export const NavContainer = styled.nav`
   background-color: #292929;
   padding: 10px;
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: auto 1fr;
   align-items: center;
 `;
 
@@ -28,6 +28,11 @@ export const StyledNavLink = styled(NavLink)`
 `;
 
 export const UserMenuContainer = styled.div`
+  display: flex;
+  align-items: center;
+`;
+
+export const UserMenuWrapper = styled.div`
   display: flex;
   align-items: center;
 `;

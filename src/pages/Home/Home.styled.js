@@ -4,13 +4,20 @@ import styled from "styled-components";
 export const AppInfo = styled.div`
   background-color: #131313;
   color: #fafafa;
-  padding: 20px;
+
+  max-width: 600px; /* Максимальна ширина 600px */
+  width: 100%; /* Ширина по контенту */
+  margin: 0 auto; /* Автоматичне центрування */
   height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  text-align: center;
   font-family: "Roboto", sans-serif;
+  font-weight: 300;
+
+  letter-spacing: 2px;
 `;
 
 export const Button = styled(Link)`
